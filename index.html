@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Sales Performance Dashboard</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <header class="header">
+    <div class="header-left">
+      <h1>Sales Performance Dashboard</h1>
+      <p class="subtitle">Real-time analytics &amp; insights</p>
+    </div>
+    <div class="header-right">
+      <div class="controls">
+        <div class="control-group">
+          <label>Year</label>
+          <select id="yearSel">
+            <option value="2024">2024</option>
+            <option value="2023">2023</option>
+          </select>
+        </div>
+        <div class="control-group">
+          <label>Region</label>
+          <select id="regionSel">
+            <option value="all">All Regions</option>
+            <option value="north">North</option>
+            <option value="south">South</option>
+            <option value="east">East</option>
+            <option value="west">West</option>
+          </select>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="main">
+
+    <!-- KPI Cards -->
+    <section class="kpi-grid" id="kpiGrid"></section>
+
+    <!-- Charts Row 1 -->
+    <section class="chart-row">
+      <div class="card">
+        <div class="card-header">
+          <h2>Monthly Revenue vs Target</h2>
+        </div>
+        <div class="legend" id="legend1"></div>
+        <div class="chart-container" style="height:220px">
+          <canvas id="revenueChart" role="img" aria-label="Monthly revenue compared to target, bar chart"></canvas>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-header">
+          <h2>Revenue by Category</h2>
+        </div>
+        <div class="legend" id="legend2"></div>
+        <div class="chart-container" style="height:220px">
+          <canvas id="categoryChart" role="img" aria-label="Revenue split by category, doughnut chart"></canvas>
+        </div>
+      </div>
+    </section>
+
+    <!-- Charts Row 2 -->
+    <section class="chart-row">
+      <div class="card">
+        <div class="card-header">
+          <h2>Regional Performance</h2>
+        </div>
+        <div class="chart-container" style="height:220px">
+          <canvas id="regionChart" role="img" aria-label="Revenue by region, horizontal bar chart"></canvas>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-header">
+          <h2>Monthly Growth Rate (%)</h2>
+        </div>
+        <div class="chart-container" style="height:220px">
+          <canvas id="growthChart" role="img" aria-label="Month-over-month growth rate, line chart"></canvas>
+        </div>
+      </div>
+    </section>
+
+    <!-- Top Products Table -->
+    <section class="card full-width">
+      <div class="card-header">
+        <h2>Top Products</h2>
+        <span class="badge">FY 2024</span>
+      </div>
+      <div class="table-wrapper">
+        <table id="productsTable">
+          <thead>
+            <tr>
+              <th>Product</th>
+              <th>Revenue</th>
+              <th>Units Sold</th>
+              <th>Margin</th>
+              <th>vs Target</th>
+              <th>Attainment</th>
+            </tr>
+          </thead>
+          <tbody id="productsBody"></tbody>
+        </table>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <p>Built by <strong>Abhishek Sharma</strong> — Data Analyst Portfolio Project | Python · SQL · Power BI</p>
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.js"></script>
+  <script src="data.js"></script>
+  <script src="charts.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
